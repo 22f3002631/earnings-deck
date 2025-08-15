@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarterly Earnings – Interactive RevealJS</title>
+  <!-- RevealJS core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@^5/dist/reveal.css" />
+  <!-- Theme (choose one: beige, black, blood, league, moon, night, serif, simple, sky, solarized, white) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@^5/dist/theme/serif.css" id="theme" />
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/highlight/monokai.css" />
+  <style>
+    .reveal h1, .reveal h2 { letter-spacing: 0.02em; }
+    .tagline { font-size: 0.8rem; opacity: 0.8; }
+    .kpi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .kpi > div { padding: 1rem; border-radius: 1rem; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+    .small { font-size: .8em; }
+    .muted { opacity:.75 }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title Slide (with email) -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p class="tagline">Modern, Interactive Presentation for Stakeholders</p>
+        <p><strong>Prepared by:</strong> Technical Consultant</p>
+        <p><strong>Contact:</strong> <a href="mailto:22f3002631@ds.study.iitm.ac.in">22f3002631@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">
+          Welcome everyone. This deck showcases our quarterly results and also demonstrates modern presentation features—fragments, Markdown, code highlighting, math, and speaker notes.
+        </aside>
+      </section>
+
+      <!-- KPI Slide with animated fragments -->
+      <section>
+        <h2>Headline KPIs</h2>
+        <div class="kpi">
+          <div class="fragment">
+            <h3>Revenue</h3>
+            <p><strong>$2.34B</strong> (+8.2% YoY)</p>
+          </div>
+          <div class="fragment">
+            <h3>Operating Margin</h3>
+            <p><strong>21.4%</strong> (+120 bps)</p>
+          </div>
+          <div class="fragment">
+            <h3>EPS (Diluted)</h3>
+            <p><strong>$1.27</strong> (+11% YoY)</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Reveal the KPIs one-by-one with fragments. Pause briefly after each to give context.
+        </aside>
+      </section>
+
+      <!-- Markdown Slide -->
+      <section data-markdown>
+        <textarea data-template>
+### Q&A Primer (Markdown Slide)
+
+- **Scope**: Financials, risk, guidance, and segment performance
+- **Data Sources**: ERP, data warehouse, audited statements
+- **Key Narrative**: Margin expansion driven by mix and cost discipline
+
+> _Note:_ This entire slide is written in **Markdown**.
+        </textarea>
+        <aside class="notes">Call out that Reveal can render native Markdown for quick authoring.</aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Code: Scenario Sensitivity (Python)</h2>
+        <pre><code class="language-python">import numpy as np
+
+# Simple EPS sensitivity to revenue growth and margin
+revenue = 2_340_000_000  # base revenue ($)
+margin  = 0.214          # operating margin
+shares  = 800_000_000    # diluted shares
+
+for g in [0.00, 0.05, 0.10]:
+    rev = revenue * (1 + g)
+    op_income = rev * margin
+    eps = (op_income * 0.75) / shares  # assume 25% tax
+    print(f"Growth={g:.0%} → EPS=${eps:.2f}")
+</code></pre>
+        <aside class="notes">Use a short, readable snippet to show how we test sensitivities. Syntax highlighting is automatic via the Highlight plugin.</aside>
+      </section>
+
+      <!-- Math (financial formulas) -->
+      <section>
+        <h2>Financial Math</h2>
+        <p class="small muted">Rendered via KaTeX using the Reveal Math plugin</p>
+        <p>Net Present Value (NPV):</p>
+        <p>\[ \mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t} \]</p>
+        <p>Capital Asset Pricing Model (CAPM):</p>
+        <p>\[ \mathbb{E}[R_i] = R_f + \beta_i\big(\mathbb{E}[R_m] - R_f\big) \]</p>
+        <p>Compound Annual Growth Rate (CAGR):</p>
+        <p>\[ \mathrm{CAGR} = \left(\frac{\text{Ending}}{\text{Beginning}}\right)^{\tfrac{1}{n}} - 1 \]</p>
+        <aside class="notes">Briefly remind the audience how each formula ties into valuation and guidance.</aside>
+      </section>
+
+      <!-- Guidance & Risks with staged reveal -->
+      <section>
+        <h2>Guidance & Risks</h2>
+        <ul>
+          <li class="fragment">FY Revenue growth: <strong>7–9%</strong></li>
+          <li class="fragment">Opex growth: <strong>3–4%</strong></li>
+          <li class="fragment">Key Risks: FX volatility, credit cycle, regulatory timing</li>
+        </ul>
+        <aside class="notes">Deliver guidance first, then expand on risk factors as they appear.</aside>
+      </section>
+
+      <!-- Closing slide -->
+      <section>
+        <h2>Thank You</h2>
+        <p>Contact: <a href="mailto:22f3002631@ds.study.iitm.ac.in">22f3002631@ds.study.iitm.ac.in</a></p>
+        <p class="small">Press <kbd>S</kbd> to open speaker notes while presenting.</p>
+        <aside class="notes">Invite questions and reference appendix if needed.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- RevealJS core + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/math/math.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      // Math plugin (KaTeX) configuration
+      katex: {
+        version: '0.16.9',
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
