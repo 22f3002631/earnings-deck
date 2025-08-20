@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Q4 2024 Earnings Report - Financial Institution</title>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="styleshee       t" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
     
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+
+    <!-- Additional highlight.js themes for better syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     
     <!-- Custom CSS -->
     <style>
@@ -157,7 +160,7 @@
                 <h2>Risk Calculation Implementation</h2>
                 <div class="fragment fade-in">
                     <h3>Python Implementation for Portfolio Risk</h3>
-                    <pre><code class="python" data-trim data-noescape>
+                    <pre><code class="language-python" data-trim data-line-numbers>
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -224,7 +227,7 @@ print(f"99% VaR: {var_99:.4f}")
                 <h2>Data Analytics Implementation</h2>
                 <div class="fragment fade-in">
                     <h3>Customer Segmentation Query</h3>
-                    <pre><code class="sql" data-trim data-noescape>
+                    <pre><code class="language-sql" data-trim data-line-numbers>
 -- Customer profitability analysis for Q4 2024
 WITH customer_metrics AS (
     SELECT
@@ -261,8 +264,59 @@ GROUP BY customer_segment, profitability_tier
 ORDER BY total_fee_revenue DESC;
                     </code></pre>
                 </div>
+                <div class="fragment fade-in" style="margin-top: 30px;">
+                    <h3>JavaScript Dashboard Integration</h3>
+                    <pre><code class="language-javascript" data-trim data-line-numbers>
+// Real-time financial dashboard updates
+class FinancialDashboard {
+    constructor(apiEndpoint) {
+        this.apiEndpoint = apiEndpoint;
+        this.metrics = {};
+        this.updateInterval = 30000; // 30 seconds
+    }
+
+    async fetchMetrics() {
+        try {
+            const response = await fetch(`${this.apiEndpoint}/metrics`);
+            const data = await response.json();
+            this.updateMetrics(data);
+        } catch (error) {
+            console.error('Failed to fetch metrics:', error);
+        }
+    }
+
+    updateMetrics(newMetrics) {
+        // Animate metric changes
+        Object.keys(newMetrics).forEach(key => {
+            const element = document.getElementById(`metric-${key}`);
+            if (element && this.metrics[key] !== newMetrics[key]) {
+                element.classList.add('metric-updated');
+                element.textContent = this.formatCurrency(newMetrics[key]);
+            }
+        });
+        this.metrics = { ...newMetrics };
+    }
+
+    formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0
+        }).format(amount);
+    }
+
+    startAutoUpdate() {
+        setInterval(() => this.fetchMetrics(), this.updateInterval);
+    }
+}
+
+// Initialize dashboard
+const dashboard = new FinancialDashboard('/api/v1');
+dashboard.startAutoUpdate();
+                    </code></pre>
+                </div>
                 <aside class="notes">
-                    This SQL query demonstrates our advanced customer analytics capabilities. We segment customers based on profitability metrics, enabling targeted marketing and personalized service offerings. This data-driven approach has improved customer retention by 15% in Q4.
+                    This SQL query demonstrates our advanced customer analytics capabilities. We segment customers based on profitability metrics, enabling targeted marketing and personalized service offerings. The JavaScript code shows our real-time dashboard implementation for live metric updates during presentations.
                 </aside>
             </section>
 
@@ -378,6 +432,26 @@ ORDER BY total_fee_revenue DESC;
                         <li><strong>Custom CSS:</strong> Financial institution branding</li>
                     </ul>
                 </div>
+                <div class="fragment fade-in" style="margin-top: 20px;">
+                    <h3>Configuration Example</h3>
+                    <pre><code class="language-json" data-trim data-line-numbers="1-15">
+{
+  "presentation": {
+    "title": "Q4 2024 Earnings Report",
+    "theme": "financial-corporate",
+    "features": {
+      "syntaxHighlighting": true,
+      "mathRendering": true,
+      "animations": true,
+      "speakerNotes": true
+    },
+    "languages": ["python", "sql", "javascript", "json"],
+    "contact": "22f3002631@ds.study.iitm.ac.in",
+    "version": "1.0.0"
+  }
+}
+                    </code></pre>
+                </div>
                 <aside class="notes">
                     This appendix summarizes all the technical requirements that were implemented in this presentation. Each feature has been successfully integrated to create a professional, interactive earnings report suitable for stakeholder presentations.
                 </aside>
@@ -413,6 +487,12 @@ ORDER BY total_fee_revenue DESC;
                 RevealNotes,
                 RevealMath.KaTeX
             ],
+
+            // Highlight.js configuration for syntax highlighting
+            highlight: {
+                highlightOnLoad: true,
+                escapeHTML: false
+            },
 
             // Math plugin configuration
             math: {
