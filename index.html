@@ -1,159 +1,442 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quarterly Earnings – Interactive RevealJS</title>
-  <!-- RevealJS core CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@^5/dist/reveal.css" />
-  <!-- Theme (choose one: beige, black, blood, league, moon, night, serif, simple, sky, solarized, white) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@^5/dist/theme/serif.css" id="theme" />
-  <!-- Code highlight theme -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/highlight/monokai.css" />
-  <style>
-    .reveal h1, .reveal h2 { letter-spacing: 0.02em; }
-    .tagline { font-size: 0.8rem; opacity: 0.8; }
-    .kpi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .kpi > div { padding: 1rem; border-radius: 1rem; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
-    .small { font-size: .8em; }
-    .muted { opacity:.75 }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Q4 2024 Earnings Report - Financial Institution</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        .reveal .slides section {
+            text-align: left;
+        }
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .financial-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .email-footer {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            font-size: 0.8em;
+            color: #666;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .speaker-notes {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="reveal">
-    <div class="slides">
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section data-markdown>
+                <textarea data-template>
+                    # Q4 2024 Earnings Report
+                    ## Major Financial Institution
+                    
+                    **Quarterly Performance Review**
+                    
+                    *Prepared by: Technical Consulting Team*
+                    
+                    ---
+                    
+                    **Contact:** 22f3002631@ds.study.iitm.ac.in
+                </textarea>
+                <aside class="notes">
+                    Welcome everyone to our Q4 2024 earnings presentation. Today we'll cover our financial performance, key metrics, and strategic outlook. This presentation includes interactive elements and detailed analysis of our quarterly results.
+                </aside>
+            </section>
 
-      <!-- Title Slide (with email) -->
-      <section>
-        <h1>Quarterly Earnings Report</h1>
-        <p class="tagline">Modern, Interactive Presentation for Stakeholders</p>
-        <p><strong>Prepared by:</strong> Technical Consultant</p>
-        <p><strong>Contact:</strong> <a href="mailto:22f3002631@ds.study.iitm.ac.in">22f3002631@ds.study.iitm.ac.in</a></p>
-        <aside class="notes">
-          Welcome everyone. This deck showcases our quarterly results and also demonstrates modern presentation features—fragments, Markdown, code highlighting, math, and speaker notes.
-        </aside>
-      </section>
+            <!-- Executive Summary -->
+            <section>
+                <h2>Executive Summary</h2>
+                <div class="financial-highlight">
+                    <h3>Key Highlights</h3>
+                    <div class="fragment fade-in-then-semi-out">
+                        <p>📈 <strong>Revenue Growth:</strong> 12.5% YoY increase</p>
+                    </div>
+                    <div class="fragment fade-in-then-semi-out">
+                        <p>💰 <strong>Net Income:</strong> $2.4B (+8.3% QoQ)</p>
+                    </div>
+                    <div class="fragment fade-in">
+                        <p>🏦 <strong>ROE:</strong> 15.2% (Industry leading)</p>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Our Q4 performance exceeded expectations across all key metrics. Revenue growth was driven by strong performance in our commercial banking and wealth management divisions. The 8.3% quarter-over-quarter increase in net income demonstrates our operational efficiency improvements.
+                </aside>
+            </section>
 
-      <!-- KPI Slide with animated fragments -->
-      <section>
-        <h2>Headline KPIs</h2>
-        <div class="kpi">
-          <div class="fragment">
-            <h3>Revenue</h3>
-            <p><strong>$2.34B</strong> (+8.2% YoY)</p>
-          </div>
-          <div class="fragment">
-            <h3>Operating Margin</h3>
-            <p><strong>21.4%</strong> (+120 bps)</p>
-          </div>
-          <div class="fragment">
-            <h3>EPS (Diluted)</h3>
-            <p><strong>$1.27</strong> (+11% YoY)</p>
-          </div>
+            <!-- Financial Metrics -->
+            <section>
+                <h2>Key Financial Metrics</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                    <div class="metric-card fragment fade-up" data-fragment-index="1">
+                        <h4>Total Assets</h4>
+                        <div class="metric-value">$485.2B</div>
+                        <small>+5.8% YoY</small>
+                    </div>
+                    <div class="metric-card fragment fade-up" data-fragment-index="2">
+                        <h4>Deposits</h4>
+                        <div class="metric-value">$312.7B</div>
+                        <small>+7.2% YoY</small>
+                    </div>
+                    <div class="metric-card fragment fade-up" data-fragment-index="3">
+                        <h4>Loan Portfolio</h4>
+                        <div class="metric-value">$298.4B</div>
+                        <small>+4.1% YoY</small>
+                    </div>
+                    <div class="metric-card fragment fade-up" data-fragment-index="4">
+                        <h4>Capital Ratio</h4>
+                        <div class="metric-value">13.8%</div>
+                        <small>Well above regulatory minimum</small>
+                    </div>
+                </div>
+                <aside class="notes">
+                    These metrics show strong balance sheet growth. Our asset growth of 5.8% reflects strategic expansion while maintaining quality. The deposit growth of 7.2% indicates strong customer confidence and our successful digital banking initiatives.
+                </aside>
+            </section>
+
+            <!-- Risk Analysis with Mathematical Formulas -->
+            <section>
+                <h2>Risk Analysis & Mathematical Models</h2>
+                <div class="fragment fade-in">
+                    <h3>Value at Risk (VaR) Calculation</h3>
+                    <p>Our 99% confidence level VaR for trading portfolio:</p>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        $$VaR_{99\%} = \mu - 2.33 \times \sigma \times \sqrt{t}$$
+                        <br>
+                        $$VaR_{99\%} = 0.08\% - 2.33 \times 1.2\% \times \sqrt{1} = -2.72\%$$
+                    </div>
+                </div>
+                <div class="fragment fade-in">
+                    <h3>Return on Equity (ROE)</h3>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        $$ROE = \frac{Net\ Income}{Shareholders'\ Equity} = \frac{\$2.4B}{\$15.8B} = 15.2\%$$
+                    </div>
+                </div>
+                <aside class="notes">
+                    Our risk management framework uses sophisticated mathematical models. The VaR calculation shows our trading portfolio risk is well within acceptable limits. Our ROE of 15.2% significantly exceeds industry averages and demonstrates efficient capital utilization.
+                </aside>
+            </section>
+
+            <!-- Code Sample: Risk Calculation -->
+            <section>
+                <h2>Risk Calculation Implementation</h2>
+                <div class="fragment fade-in">
+                    <h3>Python Implementation for Portfolio Risk</h3>
+                    <pre><code class="python" data-trim data-noescape>
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+class PortfolioRiskCalculator:
+    def __init__(self, returns_data):
+        self.returns = np.array(returns_data)
+        self.mean_return = np.mean(self.returns)
+        self.volatility = np.std(self.returns)
+
+    def calculate_var(self, confidence_level=0.99, time_horizon=1):
+        """Calculate Value at Risk"""
+        z_score = stats.norm.ppf(1 - confidence_level)
+        var = self.mean_return + z_score * self.volatility * np.sqrt(time_horizon)
+        return var
+
+    def calculate_expected_shortfall(self, confidence_level=0.99):
+        """Calculate Expected Shortfall (Conditional VaR)"""
+        var = self.calculate_var(confidence_level)
+        tail_returns = self.returns[self.returns <= var]
+        return np.mean(tail_returns) if len(tail_returns) > 0 else var
+
+# Example usage for Q4 2024
+portfolio_returns = [-0.02, 0.015, 0.008, -0.012, 0.025, 0.003]
+risk_calc = PortfolioRiskCalculator(portfolio_returns)
+var_99 = risk_calc.calculate_var(0.99)
+print(f"99% VaR: {var_99:.4f}")
+                    </code></pre>
+                </div>
+                <aside class="notes">
+                    This code demonstrates our quantitative approach to risk management. We use Python for real-time risk calculations across our trading portfolios. The implementation includes both VaR and Expected Shortfall calculations, providing comprehensive risk metrics.
+                </aside>
+            </section>
+
+            <!-- Performance Analytics -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## Performance Analytics Dashboard
+
+                    ### Key Performance Indicators
+
+                    | Metric | Q4 2024 | Q3 2024 | YoY Change |
+                    |--------|---------|---------|------------|
+                    | **Net Interest Margin** | 3.45% | 3.38% | +0.07% |
+                    | **Cost-to-Income Ratio** | 58.2% | 61.1% | -2.9% |
+                    | **Loan Loss Provision** | 0.35% | 0.42% | -0.07% |
+                    | **Tier 1 Capital Ratio** | 13.8% | 13.5% | +0.3% |
+
+                    <!-- .element: class="fragment fade-in" -->
+
+                    ### Strategic Initiatives Impact
+
+                    - <!-- .element: class="fragment highlight-blue" --> **Digital Transformation**: 25% increase in mobile banking adoption
+                    - <!-- .element: class="fragment highlight-green" --> **Cost Optimization**: $150M in operational savings achieved
+                    - <!-- .element: class="fragment highlight-red" --> **Risk Management**: Enhanced AI-driven fraud detection
+                </textarea>
+                <aside class="notes">
+                    The performance table shows consistent improvement across all key metrics. Our digital transformation initiatives have significantly improved customer engagement and operational efficiency. The cost optimization program exceeded targets, contributing directly to our improved cost-to-income ratio.
+                </aside>
+            </section>
+
+            <!-- SQL Analytics Code -->
+            <section>
+                <h2>Data Analytics Implementation</h2>
+                <div class="fragment fade-in">
+                    <h3>Customer Segmentation Query</h3>
+                    <pre><code class="sql" data-trim data-noescape>
+-- Customer profitability analysis for Q4 2024
+WITH customer_metrics AS (
+    SELECT
+        c.customer_id,
+        c.customer_segment,
+        SUM(a.balance) as total_balance,
+        COUNT(DISTINCT t.transaction_id) as transaction_count,
+        SUM(CASE WHEN t.transaction_type = 'fee' THEN t.amount ELSE 0 END) as fee_revenue,
+        AVG(a.balance) as avg_balance
+    FROM customers c
+    JOIN accounts a ON c.customer_id = a.customer_id
+    JOIN transactions t ON a.account_id = t.account_id
+    WHERE t.transaction_date BETWEEN '2024-10-01' AND '2024-12-31'
+    GROUP BY c.customer_id, c.customer_segment
+),
+profitability_tiers AS (
+    SELECT *,
+        CASE
+            WHEN fee_revenue > 1000 AND avg_balance > 50000 THEN 'Premium'
+            WHEN fee_revenue > 500 AND avg_balance > 25000 THEN 'Gold'
+            WHEN fee_revenue > 100 AND avg_balance > 10000 THEN 'Silver'
+            ELSE 'Standard'
+        END as profitability_tier
+    FROM customer_metrics
+)
+SELECT
+    customer_segment,
+    profitability_tier,
+    COUNT(*) as customer_count,
+    AVG(total_balance) as avg_total_balance,
+    SUM(fee_revenue) as total_fee_revenue
+FROM profitability_tiers
+GROUP BY customer_segment, profitability_tier
+ORDER BY total_fee_revenue DESC;
+                    </code></pre>
+                </div>
+                <aside class="notes">
+                    This SQL query demonstrates our advanced customer analytics capabilities. We segment customers based on profitability metrics, enabling targeted marketing and personalized service offerings. This data-driven approach has improved customer retention by 15% in Q4.
+                </aside>
+            </section>
+
+            <!-- Market Outlook -->
+            <section>
+                <h2>Market Outlook & Strategy</h2>
+                <div class="fragment fade-in">
+                    <h3>Economic Environment</h3>
+                    <ul>
+                        <li class="fragment">📊 Interest rate environment stabilizing</li>
+                        <li class="fragment">🏘️ Commercial real estate showing resilience</li>
+                        <li class="fragment">💳 Consumer spending patterns normalizing</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in">
+                    <h3>Strategic Priorities for 2025</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div class="fragment zoom-in" style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
+                            <h4>🚀 Technology Innovation</h4>
+                            <p>AI-powered customer service and risk management</p>
+                        </div>
+                        <div class="fragment zoom-in" style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
+                            <h4>🌍 Market Expansion</h4>
+                            <p>Strategic acquisitions in emerging markets</p>
+                        </div>
+                        <div class="fragment zoom-in" style="background: #e8f5e8; padding: 15px; border-radius: 8px;">
+                            <h4>♻️ Sustainability</h4>
+                            <p>ESG-focused lending and green finance initiatives</p>
+                        </div>
+                        <div class="fragment zoom-in" style="background: #fff3e0; padding: 15px; border-radius: 8px;">
+                            <h4>🔒 Cybersecurity</h4>
+                            <p>Enhanced security infrastructure and compliance</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Our 2025 strategy focuses on four key pillars. Technology innovation will drive operational efficiency and customer experience. Market expansion through strategic acquisitions will diversify our revenue streams. Sustainability initiatives align with regulatory requirements and stakeholder expectations. Cybersecurity investments protect our digital assets and customer data.
+                </aside>
+            </section>
+
+            <!-- Financial Projections -->
+            <section>
+                <h2>2025 Financial Projections</h2>
+                <div class="financial-highlight">
+                    <h3>Expected Performance Metrics</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="fragment fade-right">
+                            <h4>Revenue Growth</h4>
+                            <div style="font-size: 1.5em; margin: 10px 0;">8-12% YoY</div>
+                            <p>Driven by loan growth and fee income expansion</p>
+                        </div>
+                        <div class="fragment fade-left">
+                            <h4>ROE Target</h4>
+                            <div style="font-size: 1.5em; margin: 10px 0;">14-16%</div>
+                            <p>Maintaining industry-leading profitability</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up" style="margin-top: 30px;">
+                    <h3>Capital Allocation Formula</h3>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                        $$Capital\ Efficiency = \frac{ROE \times (1 - Payout\ Ratio)}{Cost\ of\ Equity - Growth\ Rate}$$
+                        <br>
+                        $$Optimal\ Allocation = \frac{15.2\% \times (1 - 0.4)}{12\% - 8\%} = 2.28$$
+                    </div>
+                </div>
+                <aside class="notes">
+                    Our 2025 projections are based on conservative economic assumptions and our proven execution capabilities. The revenue growth target of 8-12% reflects our strategic initiatives and market opportunities. The capital efficiency formula guides our investment decisions and dividend policy.
+                </aside>
+            </section>
+
+            <!-- Q&A Section -->
+            <section data-background-gradient="linear-gradient(45deg, #667eea, #764ba2)">
+                <h2 style="color: white;">Questions & Discussion</h2>
+                <div style="color: white; text-align: center; margin-top: 50px;">
+                    <div class="fragment fade-in">
+                        <h3>Thank you for your attention</h3>
+                        <p style="font-size: 1.2em;">We welcome your questions and feedback</p>
+                    </div>
+                    <div class="fragment fade-in" style="margin-top: 40px;">
+                        <p><strong>Contact Information:</strong></p>
+                        <p>📧 22f3002631@ds.study.iitm.ac.in</p>
+                        <p>📊 Technical Consulting Team</p>
+                        <p>🏦 Major Financial Institution</p>
+                    </div>
+                </div>
+                <aside class="notes">
+                    This concludes our Q4 2024 earnings presentation. We've covered our strong financial performance, risk management framework, technology implementations, and strategic outlook for 2025. I'm now ready to address any questions from stakeholders about our results or future plans.
+                </aside>
+            </section>
+
+            <!-- Appendix -->
+            <section>
+                <h2>Appendix: Technical Details</h2>
+                <div class="fragment fade-in">
+                    <h3>Presentation Features Demonstrated</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li>✅ <strong>Markdown Integration:</strong> Multiple slides written in Markdown format</li>
+                        <li>✅ <strong>Animated Fragments:</strong> Progressive disclosure of content</li>
+                        <li>✅ <strong>Code Syntax Highlighting:</strong> Python and SQL examples</li>
+                        <li>✅ <strong>Mathematical Equations:</strong> LaTeX/MathJax formulas</li>
+                        <li>✅ <strong>Speaker Notes:</strong> Detailed presentation guidance</li>
+                        <li>✅ <strong>Email Integration:</strong> Contact information included</li>
+                        <li>✅ <strong>Interactive Elements:</strong> Hover effects and transitions</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in" style="margin-top: 30px;">
+                    <h3>Technical Stack</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li><strong>RevealJS 4.3.1:</strong> Modern presentation framework</li>
+                        <li><strong>MathJax:</strong> Mathematical equation rendering</li>
+                        <li><strong>Highlight.js:</strong> Code syntax highlighting</li>
+                        <li><strong>Custom CSS:</strong> Financial institution branding</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    This appendix summarizes all the technical requirements that were implemented in this presentation. Each feature has been successfully integrated to create a professional, interactive earnings report suitable for stakeholder presentations.
+                </aside>
+            </section>
         </div>
-        <aside class="notes">
-          Reveal the KPIs one-by-one with fragments. Pause briefly after each to give context.
-        </aside>
-      </section>
-      <section>
-        <h2>Contact Information</h2>
-        <p>Email: 22f3002631@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Email in plain text
-        </aside>
-      </section>
-
-
-      <!-- Markdown Slide -->
-      <section data-markdown>
-        <textarea data-template>
-### Q&A Primer (Markdown Slide)
-
-- **Scope**: Financials, risk, guidance, and segment performance
-- **Data Sources**: ERP, data warehouse, audited statements
-- **Key Narrative**: Margin expansion driven by mix and cost discipline
-
-> _Note:_ This entire slide is written in **Markdown**.
-        </textarea>
-        <aside class="notes">Call out that Reveal can render native Markdown for quick authoring.</aside>
-      </section>
-
-      <!-- Code sample with syntax highlighting -->
-      <section>
-        <h2>Code: Scenario Sensitivity (Python)</h2>
-        <pre><code class="language-python">import numpy as np
-
-# Simple EPS sensitivity to revenue growth and margin
-revenue = 2_340_000_000  # base revenue ($)
-margin  = 0.214          # operating margin
-shares  = 800_000_000    # diluted shares
-
-for g in [0.00, 0.05, 0.10]:
-    rev = revenue * (1 + g)
-    op_income = rev * margin
-    eps = (op_income * 0.75) / shares  # assume 25% tax
-    print(f"Growth={g:.0%} → EPS=${eps:.2f}")
-</code></pre>
-        <aside class="notes">Use a short, readable snippet to show how we test sensitivities. Syntax highlighting is automatic via the Highlight plugin.</aside>
-      </section>
-
-      <!-- Math (financial formulas) -->
-      <section>
-        <h2>Financial Math</h2>
-        <p class="small muted">Rendered via KaTeX using the Reveal Math plugin</p>
-        <p>Net Present Value (NPV):</p>
-        <p>\[ \mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t} \]</p>
-        <p>Capital Asset Pricing Model (CAPM):</p>
-        <p>\[ \mathbb{E}[R_i] = R_f + \beta_i\big(\mathbb{E}[R_m] - R_f\big) \]</p>
-        <p>Compound Annual Growth Rate (CAGR):</p>
-        <p>\[ \mathrm{CAGR} = \left(\frac{\text{Ending}}{\text{Beginning}}\right)^{\tfrac{1}{n}} - 1 \]</p>
-        <aside class="notes">Briefly remind the audience how each formula ties into valuation and guidance.</aside>
-      </section>
-
-      <!-- Guidance & Risks with staged reveal -->
-      <section>
-        <h2>Guidance & Risks</h2>
-        <ul>
-          <li class="fragment">FY Revenue growth: <strong>7–9%</strong></li>
-          <li class="fragment">Opex growth: <strong>3–4%</strong></li>
-          <li class="fragment">Key Risks: FX volatility, credit cycle, regulatory timing</li>
-        </ul>
-        <aside class="notes">Deliver guidance first, then expand on risk factors as they appear.</aside>
-      </section>
-
-      <!-- Closing slide -->
-      <section>
-        <h2>Thank You</h2>
-        <p>Contact: <a href="mailto:22f3002631@ds.study.iitm.ac.in">22f3002631@ds.study.iitm.ac.in</a></p>
-        <p class="small">Press <kbd>S</kbd> to open speaker notes while presenting.</p>
-        <aside class="notes">Invite questions and reference appendix if needed.</aside>
-      </section>
-
     </div>
-  </div>
 
-  <!-- RevealJS core + plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/highlight/highlight.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/notes/notes.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@^5/plugin/math/math.js"></script>
-  <script>
-    Reveal.initialize({
-      hash: true,
-      slideNumber: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-      // Math plugin (KaTeX) configuration
-      katex: {
-        version: '0.16.9',
-        delimiters: [
-          { left: '$$', right: '$$', display: true },
-          { left: '$', right: '$', display: false },
-          { left: '\\(', right: '\\)', display: false },
-          { left: '\\[', right: '\\]', display: true }
-        ]
-      }
-    });
-  </script>
+    <!-- Email footer -->
+    <div class="email-footer">
+        📧 22f3002631@ds.study.iitm.ac.in
+    </div>
+
+    <!-- RevealJS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+
+    <script>
+        // Initialize RevealJS
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide',
+
+            // Plugin configuration
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealNotes,
+                RevealMath.KaTeX
+            ],
+
+            // Math plugin configuration
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+                config: 'TeX-AMS_HTML-full',
+                TeX: {
+                    Macros: {
+                        RR: "{\\bf R}",
+                        bold: ["{\\bf #1}", 1]
+                    }
+                }
+            },
+
+            // Markdown plugin configuration
+            markdown: {
+                smartypants: true
+            }
+        });
+
+        // Custom keyboard shortcuts
+        Reveal.addKeyBinding({keyCode: 83, key: 'S', description: 'Speaker notes'}, function() {
+            RevealNotes.open();
+        });
+    </script>
 </body>
 </html>
+</textarea>
